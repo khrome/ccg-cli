@@ -2,10 +2,10 @@
   "name": "ccg-cli",
   "version": "0.0.1",
   "main": "ccg.js",
-  { "bin" : {
+  "bin" : {
     "ccg" : "./bin/ccg",
-    "mtg" : "./bin/mtg" 
-  } },
+    "mtg" : "./bin/mtg"
+  },
   "dependencies": {
     "ascii-art": "^2.2.3",
     "g-i-s": "^2.1.3",
