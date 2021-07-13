@@ -11,7 +11,20 @@ Someday I may even integrate matchmaking and basic game mechanics.
 
 Installation
 ------------
+
 `npm install ccg-cli`
 
 Magic
 -----
+
+Display an image of the `Vesuvan Doppelganger`
+
+```bash
+ccg -g mtg lookup "Vesuvan Doppelganger"
+```
+
+List the cards from `Arabian Nights` and `Unlimited` which are still legal to play (filters are [Mongo Query Documents](https://docs.mongodb.com/manual/tutorial/query-documents/)).
+
+```bash
+ccg -g mtg list "set:arabian nights+set:unlimited edition" -f '{"legalities.standard":{"$eq":"legal"}}'
+```

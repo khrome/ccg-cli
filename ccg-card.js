@@ -5,6 +5,7 @@ var fs = require('fs');
 var Card = function(id){
     this.id = id;
 }
+
 Card.extend = function(constructor, proto){
     Object.keys(Card.prototype).forEach(function(key){
         constructor.prototype[key] = Card.prototype[key];
@@ -40,7 +41,7 @@ Card.prototype.getImage = function(location, cb){
                 return cb(undefined, location);
             }
         }else{
-            console.log('IMAGE CACHE HIT', cache+fileName)
+            //console.log('IMAGE CACHE HIT', cache+fileName)
             cb(undefined, cache+fileName);
         }
     });
@@ -54,7 +55,7 @@ Card.prototype.cache = function(id, value, cb){
         fs.readFile(cache+id, function(err, body){
             if(err) return cb(err);
             if(body && !err){
-                console.log('CACHE HIT');
+                //console.log('CACHE HIT');
                 cb(undefined, JSON.parse(body));
             }
         })

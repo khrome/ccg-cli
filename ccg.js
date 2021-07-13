@@ -1,12 +1,10 @@
 var card = 'Vesuvan Doppelganger';
 
-var CCG = function(){
-
+var CCG = function(name){
+    return require('../games/'+name);
 }
-
-CCG.Deck = function(cards){ }
-
 CCG.Card = require('./ccg-card')
+CCG.Deck = require('./ccg-deck')
 
 var lossyGet = function(name, cb){
     scryfall.getCardByName(card, false, function(err, results){
